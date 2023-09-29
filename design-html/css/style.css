@@ -2,6 +2,17 @@
 
 :root {
     --color-barra-lateral: #ffffff;
+    --shadow-color: 229deg 5% 38%;
+
+    --shadow-elevation-sidebar-low:
+        1px 0px 1.1px hsl(var(--shadow-color) / 0.23),
+        1.5px 0px 1.7px -1.2px hsl(var(--shadow-color) / 0.23),
+        3.3px 0px 3.7px -2.5px hsl(var(--shadow-color) / 0.23);
+
+    --shadow-elevation-sidebar-medium:
+        1px 0px 1.4px hsl(var(--shadow-color) / 0.08),
+        5.8px -0.1px 8.2px -0.3px hsl(var(--shadow-color) / 0.26),
+        17.5px -0.2px 24.8px -0.5px hsl(var(--shadow-color) / 0.45);
 
     --color-texto: #000000;
     --color-texto-menu: #868890;
@@ -19,6 +30,7 @@
 
     --color-scroll: #c0c0c0;
     --color-scroll-hover: #868686;
+    --color-body: #c0c0c003;
 }
 
 .dark-mode {
@@ -53,7 +65,7 @@
 body {
     height: 100vh;
     width: 100%;
-    background-color: darkcyan;
+    background-color: var(--color-body);
 }
 
 /* Menu */
@@ -74,6 +86,7 @@ body {
     z-index: 100;
 }
 
+
 /* Barra Lateral */
 .barra-lateral {
     position: fixed;
@@ -87,6 +100,7 @@ body {
     background-color: var(--color-barra-lateral);
     transition: width 0.5s ease, background-color 0.3s ease, left 0.5s ease;
     z-index: 50;
+    box-shadow: var(--shadow-elevation-sidebar-medium);
 }
 
 .mini-barra-lateral {
@@ -307,13 +321,13 @@ body {
 }
 
 main {
-    margin-left: 250px;
+    margin-left: 280px;
     padding: 20px;
     transition: margin-left 0.5s ease;
 }
 
 main.min-main {
-    margin-left: 80px;
+    margin-left: 110px;
 }
 
 /* Responsive mode */
